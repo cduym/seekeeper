@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans         
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        
+	http://www.springframework.org/schema/mvc         
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd        
+	http://www.springframework.org/schema/context         
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd        
+	http://www.springframework.org/schema/tx        
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd      
+	http://www.springframework.org/schema/aop      
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-autowire="byName">
+
+
+	<context:component-scan annotation-config="true" base-package="com.taobao.open.*.">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 强制使用CGLIB代理 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${open.database.driver.class.name}" />
+        <property name="url" value="${open.database.driver.url}" />
+		<property name="username" value="${open.database.driver.username}" />
+		<property name="password" value="${open.database.driver.password}" />
+        <property name="maxActive"><value>20</value></property>
+        <property name="initialSize"><value>1</value></property>
+        <property name="maxWait"><value>60000</value></property>
+        <property name="maxIdle"><value>20</value></property> <!-- 可以和maxActive保持一致 -->
+        <property name="minIdle"><value>1</value></property>  <!-- 可以和initialSize保持一致 -->
+        <property name="removeAbandoned"><value>true</value></property>
+        <property name="removeAbandonedTimeout"><value>180</value></property>
+        <property name="timeBetweenEvictionRunsMillis"><value>60000</value></property>
+        <property name="minEvictableIdleTimeMillis"><value>180000</value></property>
+        <property name="connectionProperties"><value>clientEncoding=UTF-8</value></property>
+        <!-- sql检查配置,在idle空闲线程检查时,检查链接有效性，丢弃无效的链接,实现自动重连-->
+        <!-- 注意使用cobar时,因为走了F5进行负载,F5默认5分钟会关闭空闲链接,所以需要通过心跳SQL保证数据库链接不被异常关闭 -->
+        <property name="testWhileIdle"><value>true</value></property>
+        <property name="testOnBorrow"><value>false</value></property>
+        <property name="testOnReturn"><value>false</value></property>
+        <property name="validationQuery"><value>SELECT @@SQL_MODE</value></property>
+        <property name="numTestsPerEvictionRun"><value>-1</value></property>
+	</bean>
+
+	<!--事务管理DataSourceTransactionManager -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!--启动spring注解功能 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

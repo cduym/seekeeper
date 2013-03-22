@@ -18,7 +18,7 @@ public class SystemConfigController {
     @Resource(name = "userService")
     private UserService userService;
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/demo", method = RequestMethod.GET)
     public String updateSystemConfig(ModelMap model) {
         List<User> users = userService.listAllUsers();
         model.addAttribute("users", users);
@@ -27,6 +27,6 @@ public class SystemConfigController {
             System.out.println(user.getName());
         }
 
-        return "test";
+        return "demo";
     }
 }

@@ -6,11 +6,11 @@
 
     <!-- resultType="User"这个使用的就是配置文件里面的别名 -->  
     <select id="getUser" parameterType="string" resultType="User">  
-        select * from user where name=#{name}  
+        select * from seekeeper_user where name=#{name}  
     </select>  
     
     <select id="listAllUsers" resultType="User">  
-        select * from user
+        select * from seekeeper_user
     </select>
     
 </mapper>  

@@ -1,6 +1,0 @@
-CREATE TABLE 'user' (
-  'id' int(11) NOT NULL AUTO_INCREMENT,
-  'name' varchar(128) NOT NULL,
-  PRIMARY KEY ('id'),
-  UNIQUE KEY 'USERUNIQUE' ('name')
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;

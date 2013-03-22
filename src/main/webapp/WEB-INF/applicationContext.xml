@@ -15,7 +15,7 @@
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/><!-- 允许system覆盖 -->
 		<property name="locations">
 			<list>
-				<value>classpath:open.properties</value>
+				<value>classpath:default.properties</value>
 			</list>
 		</property>
 	</bean>

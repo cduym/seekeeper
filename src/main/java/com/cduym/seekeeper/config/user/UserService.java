@@ -9,11 +9,11 @@
  * shall not disclose such Confidential Information and shall use it only in accordance with the terms of the license
  * agreement you entered into with Alibaba.com.
  */
-package com.taobao.open.config.user;
+package com.cduym.seekeeper.config.user;
 
 import java.util.List;
 
-import com.taobao.open.model.user.User;
+import com.cduym.seekeeper.model.user.User;
 
 /**
  * @author simon

@@ -1,4 +1,4 @@
-package com.taobao.open.controller;
+package com.cduym.seekeeper.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.taobao.open.config.user.UserService;
-import com.taobao.open.model.user.User;
+import com.cduym.seekeeper.config.user.UserService;
+import com.cduym.seekeeper.model.user.User;
 
 @Controller
 public class SystemConfigController {

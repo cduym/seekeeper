@@ -3,11 +3,11 @@
  * Alibaba.com ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only
  * in accordance with the terms of the license agreement you entered into with Alibaba.com.
  */
-package com.taobao.open.config.user.dal;
+package com.cduym.seekeeper.config.user.dal;
 
 import java.util.List;
 
-import com.taobao.open.config.user.dal.dataobject.UserDo;
+import com.cduym.seekeeper.config.user.dal.dataobject.UserDo;
 
 /**
  * 类UserDao.java的实现描述：TODO 类实现描述

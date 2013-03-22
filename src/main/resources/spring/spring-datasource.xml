@@ -15,7 +15,7 @@
 	default-autowire="byName">
 
 
-	<context:component-scan annotation-config="true" base-package="com.taobao.open.*.">
+	<context:component-scan annotation-config="true" base-package="com.cduym.seekeeper.*.">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 

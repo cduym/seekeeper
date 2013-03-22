@@ -26,7 +26,7 @@
 
 	<!-- 配置映射器 -->
 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="com.taobao.open.config.user.dal.UserDao" />
+		<property name="mapperInterface" value="com.cduym.seekeeper.config.user.dal.UserDao" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 

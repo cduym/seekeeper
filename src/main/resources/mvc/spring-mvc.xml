@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<context:component-scan use-default-filters="false" annotation-config="true"
-		base-package="com.taobao.open.controller">
+		base-package="com.cduym.seekeeper.controller">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 

@@ -12,7 +12,7 @@
     default-autowire="byName">
     
     <!-- 为业务逻辑层注入数据的对象 -->
-	<bean id="userService" class="com.taobao.open.config.user.impl.UserServiceImpl">
+	<bean id="userService" class="com.cduym.seekeeper.config.user.impl.UserServiceImpl">
 		<property name="userDao" ref="userMapper"/>
 	</bean>
 	

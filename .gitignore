@@ -4,3 +4,16 @@
 *.jar
 *.war
 *.ear
+/target
+.project
+.classpath
+.settings
+*.bak
+*.class
+*~
+*.swp
+dev.properties
+test-output/
+output.home_IS_UNDEFINED/
+reports/
+.pmd
